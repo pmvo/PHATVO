@@ -27,7 +27,8 @@ def convert_month(month): #This function is used to convert the month name into 
 
 
 
-inputFile = open("inputDates.txt")
+inputFile = open("inputDates2.txt","r")
+outputFile = open("parsedDates.txt","w")
 for line in inputFile:
     if (line!='-1'):
 
@@ -49,7 +50,8 @@ for line in inputFile:
 
                         if compare(int_month,int_day,int(str_year))==1:
                             print(str(int_month)+'/'+str_day[:len(str_day) - 1]+'/'+str_year)
+                            outputFile.write(str(int_month)+'/'+str_day[:len(str_day) - 1]+'/'+str_year+'\n')
 
 inputFile.close()
-
+outputFile.close()
 
