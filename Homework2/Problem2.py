@@ -25,14 +25,16 @@ def convert_month(month): #This function is used to convert the month name into 
     else:
         return -1
 
-str_input=''
-while (str_input!= '-1'): #A while loop is used to ask for user input, if the users enter -1, exit the loop
-    str_input = str(input())
 
-    if (str_input!='-1'):
-        split_str = str_input.split(" ")
 
-        if len(split_str)==3:
+inputFile = open("inputDates.txt")
+for line in inputFile:
+    if (line!='-1'):
+
+        split_str = line.split(" ")
+
+
+        if len(split_str)>=3:
             str_month=split_str[0]
             str_day=split_str[1]
             str_year=split_str[2]
@@ -48,6 +50,6 @@ while (str_input!= '-1'): #A while loop is used to ask for user input, if the us
                         if compare(int_month,int_day,int(str_year))==1:
                             print(str(int_month)+'/'+str_day[:len(str_day) - 1]+'/'+str_year)
 
-
+inputFile.close()
 
 
